@@ -167,3 +167,21 @@ player.hand.forEach((card, cardIndex)=>{
     }
 
 });
+function playCard(index){
+
+let card = players[0].hand[index];
+
+currentTrick.push({
+player:0,
+card:card
+});
+
+players[0].hand.splice(index,1);
+
+renderGame();
+
+console.log("Played:",card);
+
+botTurn();
+
+}
