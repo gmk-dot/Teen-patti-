@@ -1,4 +1,9 @@
-const suits=["♠","♥","♦","♣"];
+let gamePhase="deal";
+
+let highestBid=0;
+let bidWinner=null;
+
+let trump=null;const suits=["♠","♥","♦","♣"];
 
 const ranks=[
 "A","K","Q","J",
