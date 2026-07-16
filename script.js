@@ -71,7 +71,6 @@ players=[
 []
 ];
 
-
 for(let i=0;i<5;i++){
 
 for(let p=0;p<4;p++){
@@ -81,6 +80,13 @@ players[p].push(deck.pop());
 }
 
 }
+
+gamePhase="bidding";
+
+showBidding();
+
+}
+
 
 
 render();
