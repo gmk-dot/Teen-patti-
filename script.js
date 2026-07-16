@@ -127,3 +127,39 @@ function dealCards() {
     console.log(players);
 
 }
+function renderGame() {
+
+    players.forEach((player, index) => {
+
+        const unseen = document.getElementById(`p${index + 1}-unseen`);
+        const seen = document.getElementById(`p${index + 1}-seen`);
+        const hand = document.getElementById(`p${index + 1}-hand`);
+
+        unseen.innerHTML = "";
+        seen.innerHTML = "";
+        hand.innerHTML = "";
+
+        // Unseen Cards
+        player.unseen.forEach(() => {
+            unseen.innerHTML += `<div class="card back">🂠</div>`;
+        });
+
+        // Seen Cards
+        player.seen.forEach(card => {
+            seen.innerHTML += `<div class="card">${card.rank}${card.suit}</div>`;
+        });
+
+        // Hand Cards
+        player.hand.forEach(card => {
+
+            if (index === 0) {
+                hand.innerHTML += `<div class="card">${card.rank}${card.suit}</div>`;
+            } else {
+                hand.innerHTML += `<div class="card back">🂠</div>`;
+            }
+
+        });
+
+    });
+
+}
