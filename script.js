@@ -120,3 +120,41 @@ document.getElementById("startGame").onclick = () => {
   dealCards();
 
 };
+// Hand Card Play
+function playHand(index){
+
+    if(currentPlayer !== 0) return;
+
+    const card = players[0].hand.splice(index,1)[0];
+
+    document.getElementById("playedCards").innerHTML =
+    `<div class="card">${card}</div>`;
+
+    currentPlayer = 1;
+
+    renderPlayers();
+}
+
+// Seen Card Play
+function playSeen(index){
+
+    if(currentPlayer !== 0) return;
+
+    const card = players[0].seen.splice(index,1)[0];
+
+    // नीचे का Unseen कार्ड खोलो
+    if(players[0].unseen.length > 0){
+
+        const newCard = players[0].unseen.shift();
+
+        players[0].seen.push(newCard);
+
+    }
+
+    document.getElementById("playedCards").innerHTML =
+    `<div class="card">${card}</div>`;
+
+    currentPlayer = 1;
+
+    renderPlayers();
+}
