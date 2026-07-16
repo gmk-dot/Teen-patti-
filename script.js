@@ -181,3 +181,20 @@ showTrump();
 }
 
 }
+function showTrump(){
+
+document.getElementById("bidding").innerHTML=`
+
+<h3>Select Trump</h3>
+
+<button onclick="selectTrump('♣')">♣ Club</button>
+
+<button onclick="selectTrump('♠')">♠ Spade</button>
+
+<button onclick="selectTrump('♦')">♦ Diamond</button>
+
+<button onclick="selectTrump('♥')">♥ Heart</button>
+
+`;
+
+}
