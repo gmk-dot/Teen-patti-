@@ -125,7 +125,7 @@ function dealCards() {
     }
 
     console.log(players);
-
+renderGame();
 }
 function renderGame() {
 
