@@ -198,3 +198,19 @@ document.getElementById("bidding").innerHTML=`
 `;
 
 }
+function selectTrump(card){
+
+trump=card;
+
+document.getElementById("bidding").innerHTML=
+`
+<h2>
+इस राउंड का हुकुम ${trump} है!
+</h2>
+`;
+
+console.log(
+"Trump:",trump
+);
+
+}
