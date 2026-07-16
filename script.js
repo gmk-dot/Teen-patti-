@@ -185,3 +185,33 @@ console.log("Played:",card);
 botTurn();
 
 }
+function botTurn(){
+
+for(let i=1;i<4;i++){
+
+if(players[i].hand.length>0){
+
+let random =
+Math.floor(Math.random()*players[i].hand.length);
+
+let card =
+players[i].hand[random];
+
+
+currentTrick.push({
+player:i,
+card:card
+});
+
+
+players[i].hand.splice(random,1);
+
+}
+
+}
+
+renderGame();
+
+console.log(currentTrick);
+
+}
