@@ -150,16 +150,20 @@ function renderGame() {
         });
 
         // Hand Cards
-        player.hand.forEach(card => {
+        
+player.hand.forEach((card, cardIndex)=>{
 
-            if (index === 0) {
-                hand.innerHTML += `<div class="card">${card.rank}${card.suit}</div>`;
-            } else {
-                hand.innerHTML += `<div class="card back">🂠</div>`;
-            }
+    if(index===0){
 
-        });
+        hand.innerHTML += `
+        <div class="card" onclick="playCard(${cardIndex})">
+        ${card.rank}${card.suit}
+        </div>`;
 
-    });
+    } else {
 
-}
+        hand.innerHTML += `<div class="card back">🂠</div>`;
+
+    }
+
+});
