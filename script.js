@@ -61,10 +61,10 @@ function dealCards() {
     });
   }
 
-  renderPlayers();
-}
+  // Current Turn
+let currentPlayer = 0;
 
-// Render
+// Render Players
 function renderPlayers() {
 
   players.forEach((player, index) => {
@@ -85,13 +85,25 @@ function renderPlayers() {
     });
 
     // Seen
-    player.seen.forEach(card => {
-      seen.innerHTML += `<div class="card">${card}</div>`;
+    player.seen.forEach((card, i) => {
+
+      if(index === 0){
+        seen.innerHTML += `<div class="card" onclick="playSeen(${i})">${card}</div>`;
+      }else{
+        seen.innerHTML += `<div class="card">${card}</div>`;
+      }
+
     });
 
     // Hand
-    player.hand.forEach(card => {
-      hand.innerHTML += `<div class="card">${card}</div>`;
+    player.hand.forEach((card, i) => {
+
+      if(index === 0){
+        hand.innerHTML += `<div class="card" onclick="playHand(${i})">${card}</div>`;
+      }else{
+        hand.innerHTML += `<div class="card back">🂠</div>`;
+      }
+
     });
 
   });
