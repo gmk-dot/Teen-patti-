@@ -94,3 +94,36 @@ console.log(deck);
 document
 .getElementById("startGame")
 .addEventListener("click",startGame);
+function dealCards() {
+
+    // Reset
+    players.forEach(player => {
+        player.unseen = [];
+        player.seen = [];
+        player.hand = [];
+    });
+
+    // 4 Unseen
+    for (let i = 0; i < 4; i++) {
+        players.forEach(player => {
+            player.unseen.push(deck.pop());
+        });
+    }
+
+    // 4 Seen
+    for (let i = 0; i < 4; i++) {
+        players.forEach(player => {
+            player.seen.push(deck.pop());
+        });
+    }
+
+    // 5 Hand
+    for (let i = 0; i < 5; i++) {
+        players.forEach(player => {
+            player.hand.push(deck.pop());
+        });
+    }
+
+    console.log(players);
+
+}
