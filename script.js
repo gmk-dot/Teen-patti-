@@ -83,11 +83,11 @@ let j=Math.floor(Math.random()*(i+1));
 
 function startGame(){
 
-createDeck();
+    createDeck();
 
-shuffle();
+    shuffle();
 
-console.log(deck);
+    dealCards();
 
 }
 
