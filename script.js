@@ -150,3 +150,18 @@ players[0].splice(index,1);
 render();
 
 }
+function showBidding(){
+
+document.getElementById("bidding").innerHTML=`
+
+<h3>Place Your Bid</h3>
+
+<button onclick="bid(14)">14</button>
+<button onclick="bid(15)">15</button>
+<button onclick="bid(16)">16</button>
+<button onclick="bid(17)">17</button>
+<button onclick="bid(18)">18</button>
+
+`;
+
+}
