@@ -165,3 +165,19 @@ document.getElementById("bidding").innerHTML=`
 `;
 
 }
+function bid(value){
+
+if(value>highestBid){
+
+highestBid=value;
+bidWinner=0;
+
+alert(
+"You won bid: "+value
+);
+
+showTrump();
+
+}
+
+}
